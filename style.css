@@ -1,0 +1,342 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: #fff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header */
+header {
+  background: #3e2723;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: 500;
+}
+
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Hero Section */
+#hero {
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: #ffcc80;
+  color: #3e2723;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ffb74d;
+}
+
+/* Sections with Backgrounds */
+#about, #menu {
+  position: relative;
+  color: white;
+  padding: 80px 20px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#about {
+  background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5') center/cover no-repeat;
+}
+
+#menu {
+  background: url('https://images.unsplash.com/photo-1511920170033-f8396924c348') center/cover no-repeat;
+}
+
+#about::before, #menu::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 20, 10, 0.6);
+  z-index: -1;
+}
+
+#about h2, #about p,
+#menu h2, #menu .item h3, #menu .item p {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  text-align: center;
+}
+
+/* Testimonials */
+#testimonials {
+  background: linear-gradient(to right, #fff3e0, #ffe0b2);
+  color: #333;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials blockquote {
+  margin: 20px auto;
+  max-width: 600px;
+  font-style: italic;
+}
+
+/* Contact */
+#contact {
+  background: #3e2723;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#contact a {
+  color: #ffcc80;
+}
+
+.map-container {
+  margin: 30px 0;
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: white;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  color: #ffcc80;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    background: #4e342e;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.socials a:hover,
+.socials a:active {
+  transform: scale(1.2);
+  color: #ffcc80;
+}
+.btn:active,
+.socials a:active {
+  transform: scale(0.95);
+  background-color: #e0a050;
+}
+/* Animated Social Icons */
+.socials {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, box-shadow 0.3s, color 0.3s;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effects */
+.socials a:hover {
+  transform: scale(1.3) rotate(5deg);
+  box-shadow: 0 0 15px #ffcc80, 0 0 25px #ffcc80;
+  color: #3e2723;
+  background-color: #ffcc80;
+}
+
+/* Optional: Subtle bounce when visible */
+.socials a {
+  animation: popIn 0.6s ease forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* -----------------------------------
+🔥 Enhanced Section Animations & Style
+------------------------------------ */
+section.fade-in,
+footer.fade-in {
+  position: relative;
+  padding: 80px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Extra flavor animations */
+section h2,
+section p,
+footer h2,
+footer p {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Give each section a soft glow or shadow */
+#hero {
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+  box-shadow: inset 0 0 80px rgba(0,0,0,0.4);
+}
+
+#about::before,
+#menu::before {
+  background: rgba(30, 20, 10, 0.65);
+}
+
+#testimonials {
+  background: linear-gradient(to right, #fff3e0, #ffe0b2);
+  color: #3e2723;
+  box-shadow: inset 0 0 80px rgba(255, 204, 128, 0.2);
+}
+
+#contact {
+  background: linear-gradient(to right, #3e2723, #4e342e);
+  color: white;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5);
+}
